@@ -438,6 +438,663 @@
 
 
   
+    <article id="post-py-md" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2021/10/24/py-md/" target="_blank">py.md</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2021/10/24/py-md/" class="archive-article-date">
+        <time datetime="2021-10-24T07:40:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-24</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    
+    
+
+    
+
+    
+    <h2 id="引用函数库-import"><a href="#引用函数库-import" class="headerlink" title="引用函数库 import"></a>引用函数库 import</h2><h3 id="搜索想要的第三方库"><a href="#搜索想要的第三方库" class="headerlink" title="搜索想要的第三方库"></a>搜索想要的第三方库</h3><p><a target="_blank" rel="noopener" href="http://pypi.org/">http://pypi.org</a></p>
+<h3 id="安装第三方库"><a href="#安装第三方库" class="headerlink" title="安装第三方库"></a>安装第三方库</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pip install -U&lt;第三方库名&gt;<span class="comment">#更新</span></span><br><span class="line">pip uninstall&lt;第三方库名&gt;<span class="comment">#卸载</span></span><br><span class="line">pip download&lt;第三方库名&gt;<span class="comment">#下载不安装</span></span><br><span class="line">pip show &lt;第三方库名&gt;<span class="comment">#详细信息</span></span><br><span class="line">pip search &lt;关键词&gt;<span class="comment">#</span></span><br><span class="line">pip <span class="built_in">list</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Anaconda</span><br><span class="line">数据分析数据展示</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#文件安装方法</span></span><br><span class="line">某些第三方库pip下载之后需要编译再安装</span><br><span class="line">如果操作系统没有编译环境，则能下载但不能安装</span><br><span class="line">可以直接下载编译后的版本用于安装吗</span><br><span class="line"></span><br><span class="line"><span class="comment">#UCI：</span></span><br><span class="line">http://www.lfd.uci.edu/ ~gohlke/pythonlibs/</span><br><span class="line"><span class="comment">#（举例）安装wordcloud库</span></span><br><span class="line"><span class="number">1.</span>在UCI页面上搜索wordcloud</span><br><span class="line"><span class="number">2.</span>下载对应版本的文件</span><br><span class="line"><span class="number">3.</span>使用pip install &lt;文件名&gt;安装</span><br></pre></td></tr></table></figure>
+
+<h2 id="引用方式"><a href="#引用方式" class="headerlink" title="引用方式"></a>引用方式</h2><ol>
+<li><p>import &lt;库名&gt;<br>&lt;库名&gt;.&lt;函数名&gt;（&lt;函数参数&gt;）</p>
+</li>
+<li><p>form &lt;库名&gt;import&lt;函数名&gt;<br>form&lt;库名&gt;import*<br>&lt;函数名&gt;(&lt;函数参数&gt;)</p>
+</li>
+<li><p>import&lt;库名&gt;as&lt;库别名&gt;<br>&lt;库别名&gt;.&lt;函数名&gt;（&lt;函数参数&gt;）<br></p>
+<h3 id="turtle库"><a href="#turtle库" class="headerlink" title="turtle库"></a>turtle库</h3><h3 id="控制函数"><a href="#控制函数" class="headerlink" title="控制函数"></a>控制函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">turtle.setup(x,y,z,w)<span class="comment">#经过实践应该用 turtle.Screen().setup(x,y,z,w)--&gt;&gt;pycharm是这样的</span></span><br><span class="line"><span class="comment"># 写字</span></span><br><span class="line">turtle.write(<span class="string">&quot;str&quot;</span>[,<span class="string">&quot;center&quot;</span>][,font(<span class="string">&#x27;fontname&#x27;</span>,fontszie,<span class="string">&#x27;fonttype&#x27;</span>)]):<span class="comment">#fonttype：normal,bold,italic </span></span><br><span class="line">turtle.penup()<span class="comment">#上</span></span><br><span class="line">turtle.pendown()<span class="comment">#下</span></span><br><span class="line">turtle.pensize(width)<span class="comment">#宽度</span></span><br><span class="line">turtle.pencolor(color)</span><br><span class="line">-(<span class="string">&quot;purple&quot;</span>)<span class="comment">#颜色字符串</span></span><br><span class="line">-(<span class="number">0.63</span>,<span class="number">0.13</span>,<span class="number">0.94</span>)<span class="comment">#rgb色彩值</span></span><br><span class="line">-((<span class="number">0.63</span>,<span class="number">0.13</span>,<span class="number">0.94</span>))<span class="comment">#rgb当成一个元素</span></span><br><span class="line"><span class="comment">#运动控制函数</span></span><br><span class="line">turtle.fd(d)<span class="comment">#走直线</span></span><br><span class="line">turtle.circle(r,extent=<span class="literal">None</span><span class="string">&quot;&#x27;角度&#x27;&quot;</span>)<span class="comment">#根据r绘制extent角度弧形（圆心默认在左侧）</span></span><br><span class="line">turtle.done()<span class="comment">#有则结束之后手动结束</span></span><br><span class="line">turtle.hidetuetle()</span><br><span class="line">turtle.</span><br><span class="line">turtle.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="time库"><a href="#time库" class="headerlink" title="time库"></a>time库</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#获取当前时间</span></span><br><span class="line">time.time():浮点数</span><br><span class="line">time.ctime()：字符串</span><br><span class="line">time.gmtime():其他程序可应用</span><br><span class="line"><span class="comment">#时间格式化</span></span><br><span class="line">time.strftime(tpl,ts)<span class="comment">#tpl格式化模板字符串，ts计算机内部时间类型变量</span></span><br><span class="line">&gt;&gt;&gt;t = time.gmtime()</span><br><span class="line">&gt;&gt;&gt;time.strftime(<span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>,t)</span><br><span class="line"><span class="string">&#x27;2018-01-26 12:55:20&#x27;</span></span><br><span class="line">time.strptime(<span class="built_in">str</span>,tpl):<span class="comment">#根据指定的格式把一个时间字符串解析为时间元组</span></span><br><span class="line"><span class="comment">#程序计时</span></span><br><span class="line">time.pref_counter()<span class="comment">#返回一个以秒为单位的时间值</span></span><br><span class="line">time.sleep(s):程序停滞s秒</span><br></pre></td></tr></table></figure>
+
+<img src="C:\Users\孤灯照影\AppData\Roaming\Typora\typora-user-images\image-20210810182249870.png" alt="image-20210810182249870" style="zoom: 50%;" />
+
+<h2 id="random库"><a href="#random库" class="headerlink" title="random库"></a>random库</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">random.seed(<span class="number">10</span>)<span class="comment">#产生种子10对应的序列</span></span><br><span class="line">random.random()<span class="comment">#产生0到1之间随机数</span></span><br><span class="line"><span class="comment">#需要再现随机过程就设置种子</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#扩展随机数</span></span><br><span class="line">random.randint(a,b):a到b之间随机整数</span><br><span class="line">random.randrange(m,n[,k]):m到n之间k为步长的随机整数</span><br><span class="line">random.getrandbits(k)：生成k比特大小的随机数</span><br><span class="line">random.uniform(a,b)：a到b之间的随机小数</span><br><span class="line"></span><br><span class="line">random.choice(seq):从列表中随机选出一个元素</span><br><span class="line">random.shuffle(seq)：将列表元素乱序</span><br></pre></td></tr></table></figure>
+
+<h2 id="PyInstaller库-第三方库，需要额外安装"><a href="#PyInstaller库-第三方库，需要额外安装" class="headerlink" title="PyInstaller库(第三方库，需要额外安装)"></a>PyInstaller库(第三方库，需要额外安装)</h2><p>将.py源代码转换成无需源代码的可执行文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-h <span class="comment">#查看帮助</span></span><br><span class="line">--clean <span class="comment">#清理打包过程中产生的临时文件</span></span><br><span class="line">-D,--onedir <span class="comment">#默认值，生成dist文件夹</span></span><br><span class="line">-F,--onefile <span class="comment">#在dist文件夹中生成独立打包的文件（推荐）</span></span><br><span class="line">-i&lt;图标文件名.ico&gt; <span class="comment">#指定打包程序使用的图标（icon）文件</span></span><br><span class="line"><span class="comment">#例子（在cmd行）</span></span><br><span class="line">pyinstaller -i curve.ico -F &lt;源代码文件&gt;.py</span><br><span class="line"><span class="comment">#就生成了带有curve.ico图标的目标可执行文件</span></span><br></pre></td></tr></table></figure>
+
+<p>使用方法：在源代码所在目录下使用命令行（cmd）运行-pyinstaller -F</p>
+<p>自动生成</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">_pycache_（可删除）</span><br><span class="line">build（可删除）</span><br><span class="line">dist（目标所在）</span><br></pre></td></tr></table></figure>
+
+<h2 id="jieba库-中文分词第三方库"><a href="#jieba库-中文分词第三方库" class="headerlink" title="jieba库(中文分词第三方库)"></a>jieba库(中文分词第三方库)</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#安装pip install jieba#用户还可以自定义添加词组</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">精确模式：精确切分，不存在冗余全模式：所有可能词扫描出来，存在冗余搜索引擎模式：在精确模式基础上对长词再次切分</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#三种搜索模式及用法jieba.lcut(s) #精确模式，返回列表类型分词结果，不存在冗余jieba.lcut(s,cut_all=True) #全模式，返回一个列表类型分词结果，存在冗余jieba.lcut_for_search(s) #搜索引擎模式，返回列表类型，存在冗余jieba.add_word(s) #向分词词库中增加新词</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="wordcloud库"><a href="#wordcloud库" class="headerlink" title="wordcloud库"></a>wordcloud库</h2><p>空格分隔的大字符串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#常规方法w.generate(txt)#向WordCloud对象w中加载文本txtw.to_file(filename)#将词云输出为图像格式.png或.jpg</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#生成词云的宽高度，width(默认400)和height(默认200)w=wordcloud.WordCloud(width=600)w=wordcloud.WordCloud(height=400)#字体参数,最小字号，最大字号w=wordcloud.WordCloud(min_font_size=10)w=wordcloud.WordCloud(max_font_size=20)w=wordcloud.WordCloud(font_step=2)#指定词云中字体字号的步进间隔（默认为1）w=wordcloud.WordCloud(font_path=&quot;msyh.ttc&quot;)#指定字体文件路径（默认None）w=wordcloud.WordCloud(max_words=20)#指定词云显示的最大单词数量（默认200）w=wordcloud.WordCloud(stop_words=&#123;&quot;python&quot;&#125;)#指定词云的排除词列表#配置输出效果mask 指定词云形状from scipy.misc import imreadmk=imread(&quot;pic.png&quot;)#读取图片效果w=wordcloud.WordCloud(mask=mk)background_color 指定背景颜色，默认黑色w=wordcloud.WordCloud(backround_color=&quot;white&quot;)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="OS库（py标准库）"><a href="#OS库（py标准库）" class="headerlink" title="OS库（py标准库）"></a>OS库（py标准库）</h2><p>提供通用的，基本的操作系统交互功能</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#引用方法import os.pathimport os.path as op</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.path.abspath(path（文件名）)<span class="comment">#获得绝对路径os.path.normpath(path)#路径归一化os.path.relpath(path)#文件路径与程序运行路径相对位置os.path.dirname(path)#返回路径中而目录部分os.path.basename(path)#返回路径中的文件名称部分os.path.jion(path)#两个路径整合起来os.path.exists(path)#判断对应的文件或目录是否存在os.path.isfile(path)#判断路径对应的是否是一个存在的文件os.path.isdir(path)#判断路径对应的是否是一个存在的目录os.path.getatime(path)#路径的访问时间os.path.getmtime(path)#路径上次修改时间os.path.getctime(path)#路径的创建时间os.path.getsize(path)#获取对应文件大小</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.system</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#环境参数os.chdir(path)#修改当前程序操作路径（到path）os.getcwd()#返回程序当前路径os.getlogin()#获得当前系统登陆用户名称os.cpu_count()#获得当前系统的cpu的数量os.urandom(n)#获得n个字节长度的随机字符串，通常用于加解密运算</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h1 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h1><h2 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>&lt;循环变量&gt; <span class="keyword">in</span> &lt;遍历结构&gt;	&lt;语句块&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#计数循环for i in range(5):&gt;&gt;0,1,2,3,4for i in range(M,N,K):#从M到N-1，以K为步长#字符串遍历循环for c in str :    print(c,end=&quot;,&quot;):&gt;&gt;s,t,t,#列表遍历for item in [123,&quot;py&quot;,456] :	print(item,end&quot;,&quot;)&gt;&gt;123,py,456,#文件遍历循环for line in fi(文件标识符) :    </span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>)	<span class="built_in">print</span>(<span class="string">&quot;hello:&quot;</span>,i)<span class="comment">#逗号打印出来就是空格-range(N)#产生0-N-1</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="1-数据"><a href="#1-数据" class="headerlink" title="1.数据"></a>1.数据</h1><h2 id="1-1数据类型"><a href="#1-1数据类型" class="headerlink" title="1.1数据类型"></a>1.1数据类型</h2><h3 id="1-1-1字符串"><a href="#1-1-1字符串" class="headerlink" title="1.1.1字符串"></a>1.1.1字符串</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;字符串&gt;[M:N:K]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>转义字符</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">     </span><br></pre></td></tr></table></figure>
+
+
+
+<p>字符串操作符</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#字符串处理函数len(&quot;字符串&quot;)：返回字符串长度str(x):任意类型对应的字符串形式chr()str.lower():全小写str.upper():全大写str.split():str.replace(old,new)str.center(宽度，&quot;填充&quot;)str.strip(chars):去掉左右侧chars中所列出字符str.join(iter):字符串分割</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="1-1-2整型"><a href="#1-1-2整型" class="headerlink" title="1.1.2整型"></a>1.1.2整型</h3><ul>
+<li><p>十进制：1010，-177</p>
+</li>
+<li><p>二进制：0B（0b）开头</p>
+</li>
+<li><p>八进制：0O（0o）开头</p>
+</li>
+<li><p>十六进制：0X（0x）开头</p>
+</li>
+</ul>
+<h3 id="1-1-3浮点型"><a href="#1-1-3浮点型" class="headerlink" title="1.1.3浮点型"></a>1.1.3浮点型</h3><p><code>不确定尾数</code> </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="number">0.1</span>+<span class="number">0.2</span>==<span class="number">0.3</span><span class="literal">False</span>&gt;&gt;&gt;<span class="built_in">round</span>(<span class="number">0.1</span>+<span class="number">0.2</span>==<span class="number">0.3</span>)<span class="literal">True</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><code>科学计数法表示</code>:<a>e<b></p>
+<h3 id="1-1-4复数类型"><a href="#1-1-4复数类型" class="headerlink" title="1.1.4复数类型"></a>1.1.4复数类型</h3><h3 id="1-1-5列表"><a href="#1-1-5列表" class="headerlink" title="1.1.5列表"></a>1.1.5列表</h3><h3 id="1-1-6组合数据类型"><a href="#1-1-6组合数据类型" class="headerlink" title="1.1.6组合数据类型"></a>1.1.6组合数据类型</h3><ol>
+<li><p>集合类型（不可变数据类型）</p>
+<p>每个元素唯一</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#不可变类型：整型，浮点型，复数，字符串，元组类型#集合用&#123;&#125;表示#生成集合用&#123;&#125;或set()  &lt;-生成空集合必有set&gt;&gt;&gt;A =&#123;&quot;python&quot;,123,(&quot;python&quot;,123)&#125;&#123;123,&#x27;python&#x27;,(&#x27;python&#x27;,123)&#125;&gt;&gt;&gt;B=set(&quot;python123&quot;)&#123;&#x27;1&#x27;,&#x27;p&#x27;,&#x27;2&#x27;,&#x27;3&#x27;,&#x27;y&#x27;&#125;&gt;&gt;&gt;C = &#123;&quot;python&quot;,123,&quot;python&quot;,123&#125;&#123;&#x27;python&#x27;,123&#125;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 运算符#返回新的集合#以下所有操作符都为A&lt;操作符&gt;B| #并，返回A，B所有元素- #差，返回A包含但B不包含元素&amp; #交，返回同时在AB中的元素^ #补，返回AB中的非相同元素&lt;= 或 &lt; #返回True/False，判断AB子集关系&gt;= 或 &gt; #返回True/False，判断AB包含关系#增强操作符#以下所有操作符都为A&lt;增强操作符&gt;B# 更新集合A|= #AB包含的所有元素-= #A包含而B不包含元素&amp;= #AB同时包含的元素^= #AB中非相同元素#例子&gt;&gt;&gt;A = &#123;&quot;p&quot;,&quot;y&quot;,123&#125;&gt;&gt;&gt;B = set(&quot;pypy123&quot;)&gt;&gt;&gt;A-B&gt;&gt;&gt;B-A&gt;&gt;&gt;A&amp;B&gt;&gt;&gt;A|B&gt;&gt;&gt;A^B</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 集合处理方法（函数调用）S.add(x) #若x不在集合S中，则添加S.discard(x) #移除S中的元素x，若不在，不报错S.remove(x) #移除S中的元素x，若不在，产生KeyError异常S.clear(x) #移除S中所有元素S.pop(x) #随机返回S的一个元素，更新S，若S为空产生KeyError异常S.copy() #返回S的一个副本len(S) #返回集合S的元素个数x in S #判断x是否在S中，在返回Truex not in S #判断x是否在S中,在返回Falseset() #将其他类型变量x转变为集合类型#例子.A = &#123;&#x27;p&#x27;,&#x27;y&#x27;,&#x27;123&#x27;&#125;try:    while True:        print(A.pop(),end=&quot;&quot;)    except:        pass# 数据去重&gt;&gt;&gt;ls = [&quot;p&quot;,&quot;p&quot;,&quot;y&quot;,&quot;y&quot;,123]&gt;&gt;&gt;s = set(ls)&#123;&#x27;p&#x27;,&#x27;y&#x27;,123&#125;&gt;&gt;&gt;lt = list(s) #将集合转换为列表[&#x27;p&#x27;,&#x27;y&#x27;,123]</span></span><br></pre></td></tr></table></figure></li>
+<li><p>序列类型</p>
+<p>一维元素向量，元素类型可以不同</p>
+<p>由序号引导，通过下标访问序列的特定元素</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#序列类型的序号#正向递增，反向递减</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>字符串类型</li>
+<li>元组类型</li>
+<li>列表类型</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 六个操作符x in s #是返回Truex not in s #不在返回Falses + t #连接两个序列s*n或n*s # 将序列s复制n次s[i] #索引，返回s中第i个元素s[i:j]或s[i:j:k] #切片，返回序列s中第i到第j以k为步长的元素子序列#例子&gt;&gt;ls =[&quot;A&quot;,123,&quot;.io&quot;]&gt;&gt;&gt;[::-1][&#x27;.io&#x27;,123,&#x27;A&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 五个函数和方法len(s) #f返回序列s的长度min(s) #返回序列s的最小元素，s中元素需要可比较max(s) #返回最大元素s.index(x)或s.index(x,i,j) #返回序列s从i开始到j位置中第一次出现元素x的位置s.count(x) #返回序列中出现x总次数</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#元组类型(序列类型的扩展，创建不被修改)#用()或tuple()创建#可使用或不使用小括号def func()	return 1,2 #函数返回两个值，认为是元组类型&gt;&gt;&gt;creature = &quot;cat&quot;,&quot;dog&quot;,&quot;tiger&quot;,&quot;human&quot;&gt;&gt;&gt;creature(&#x27;cat&#x27;,&#x27;dog&#x27;,&#x27;tiger&#x27;,&#x27;human&#x27;)&gt;&gt;&gt;color = (0x001100,&quot;blue&quot;,creature)&gt;&gt;&gt;color(4352,&#x27;blue&#x27;,(&#x27;cat&#x27;,&#x27;dog&#x27;,&#x27;tiger&#x27;,&#x27;human&#x27;))# 操作</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列表序列类型，创建后可随意修改使用[]或list()创建元素类型可以不同，无长度限制# 函数操作及方法（ls，lt均为列表类型）ls[i] = x #替换ls[i:j:k] = lt #列表lt替换ls切片后对应元素的子列表del ls[i] #删除del ls[i:j:k] #删除i到j以k为步长的元素ls += lt #更新列表ls，将lt元素加到ls中ls *= n #更新列表s，其元素重复n次 ls.append(x) #在列表最后加元素xls.clear() #删除ls中所有元素ls.copy() #生成新列表，赋值ls中所有元素ls.insert(i,x) #在第i个位置增加元素xls.pop(i) #将i位置元素取出并删除ls.remove(x) #将出现的第一个元素x删除ls.reverse() #将列表中的元素反转</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="3">
+<li><p>字典类型</p>
+<p>字典是<strong>键值对</strong>的集合，无序</p>
+<p>采用{}和dict()创建<br>{&lt;键1&gt;：&lt;值1&gt;，&lt;键2&gt;：&lt;值2&gt;，&lt;键3&gt;：&lt;值3&gt;}</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;字典变量&gt;=&#123;&lt;键<span class="number">1</span>&gt;:&lt;值<span class="number">1</span>&gt;,...,&lt;键n&gt;:&lt;键n&gt;&#125;&lt;值&gt;=&lt;字典变量&gt;[&lt;键&gt;]&lt;字典变量&gt;[&lt;键&gt;]=&lt;值&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 字典类型函数或方法假设一个字典ddel d[k] #删除键k对应的数据值k in d #判断键k是否在字典中d.keys() #返回字典d中所有键的信息d.values() #返回字典d中所有值的信息d.items() #返回字典d中所有键值对信息#~~~~~~~分~~~~~~割~~~~~~线d.get(k,&lt;default&gt;) #键k存在则返回相应值，不在则返回&lt;default&gt;值d.pop(k,&lt;default&gt;) #键k存在，则取出相应值d.popitem() #随机取出一个键值对，以元组形式返回d.clear() #删除所有键值对</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="一维数据"><a href="#一维数据" class="headerlink" title="一维数据"></a>一维数据</h2><h3 id="存储"><a href="#存储" class="headerlink" title="存储"></a>存储</h3><p>空格分隔</p>
+<p>逗号分隔</p>
+<p>其他分割</p>
+<h3 id="处理"><a href="#处理" class="headerlink" title="处理"></a>处理</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#从空格分隔的文件中读数据txt=open(fname).read()ls=txt.split()#txt.close()#从特殊符号分割的文件中读入数据txt=open(fname).read()ls=txt.split(&quot;$&quot;)#txt.close()#采用空格分隔方式将数据写入文件ls=[&#x27;中国&#x27;，&#x27;美国&#x27;,&#x27;日本&#x27;]f=open(fname,&#x27;w&#x27;)f.write(&#x27; &#x27;.join(ls))f.close()</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="二维数据"><a href="#二维数据" class="headerlink" title="二维数据"></a>二维数据</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#从csv格式文件中读入数据fo = open(fname)ls=[]for line in fo:    line=line.replace(&quot;\n&quot;,&quot;&quot;)    ls.append(line.split(&quot;,&quot;))fo.close()#将数据写入csv格式的文件ls=[[],[],[]] #二维列表f=open(fname,&#x27;w&#x27;)for item in ls:    f.write(&#x27;,&#x27;.jion(item)+&#x27;\n&#x27;)f.close()#二维数据的逐一处理ls=[[1,2],[3,4],[5,6]]for row in ls:    for column in row:        printf(column)</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><h3 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h3><p><code>大小写字母，数字，下划线，数字等字符，首字符不能是数字，不能与保留字相同</code></p>
+<h3 id="保留字"><a href="#保留字" class="headerlink" title="保留字"></a>保留字</h3><p>编程语言内部定义并保留使用</p>
+<table>
+<thead>
+<tr>
+<th>and</th>
+<th>elif</th>
+<th>import</th>
+<th>raise</th>
+<th>global</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>as</td>
+<td>else</td>
+<td>in</td>
+<td>return</td>
+<td>nonlocal</td>
+</tr>
+<tr>
+<td>assert</td>
+<td>except</td>
+<td>is</td>
+<td>try</td>
+<td>True</td>
+</tr>
+<tr>
+<td>break</td>
+<td>finally</td>
+<td>lambda</td>
+<td>while</td>
+<td>False</td>
+</tr>
+<tr>
+<td>class</td>
+<td>for</td>
+<td>not</td>
+<td>with</td>
+<td>None</td>
+</tr>
+<tr>
+<td>continue</td>
+<td>form</td>
+<td>or</td>
+<td>yield</td>
+<td></td>
+</tr>
+<tr>
+<td>def</td>
+<td>if</td>
+<td>pass</td>
+<td>del</td>
+<td></td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">in</span>  判断元素是否在列表中&lt;变量&gt;=<span class="built_in">input</span>(<span class="string">&quot;提示信息&quot;</span>)<span class="comment">#括号里面可以空的print()格式化使用print(&quot;转换后的温度的&#123;：.2f&#125;c&quot;.format(C))#将C填充到&#123;：.2f&#125;eval(&lt;字符串或字符串变量&gt;)#去掉参数最外侧引号并执行余下语句的函数eval(TempStr[0:-1])try:    &lt;语句块1&gt;except (&lt;异常类型&gt;):#&lt;NameError&gt;    &lt;语句块2&gt;#语句块1执行一场则执行语句块2else :    &lt;语句块3&gt;#语句1不异常时执行3finally :    &lt;语句块4&gt;#无论前面是否异常最后都执行</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#数据运算pow(x,y,[z]) x的y次幂[(x**y)%z],对z取余round(x[,d]):对x四舍五入，d是小数截取位数abs(x):绝对值函数divmod(x,y)：输出(商x//y，余数x%y)max(x1,x1,...xn)最大值min(x1,x1,...xn)最小值</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">变量名<span class="number">1</span> = <span class="built_in">open</span>(<span class="string">&quot;文件名&quot;</span>,<span class="string">&quot;打开模式&quot;</span>)变量名<span class="number">1.</span>close()s=f.read(size) <span class="comment"># 读入全部内容or读入前size长度内容s=f.readline(size) # 读入一行内容or该行前size长度内容s=f.readlines(hint) # 读入所有行，以每行为元素形成列表or读入前hint行</span></span><br></pre></td></tr></table></figure>
+
+<p>若文件太大，一次性读入会内存不够而且非常耗时间</p>
+<h3 id="文件遍历方法"><a href="#文件遍历方法" class="headerlink" title="文件遍历方法"></a>文件遍历方法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 文件读取遍历方法一（小文件的读取）#文件太大内存不够，而且不好处理fname=input(&quot;请输入要打开文件的名称&quot;)fo=open(fname,&quot;r&quot;)txt=fo.read()#对全文txt进行处理fo.close()# 文件遍读取历方法二（大文件读取）#fname=input(&quot;请输入要打开文件的名称&quot;)fo=open(fname,&quot;r&quot;)txt=fo.read(2)while txt != &quot;&quot;: # 只要读入不为空，就继续读入    # 对txt进行处理    txt = fo.read(2)fo.close()</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="文件的逐行操作"><a href="#文件的逐行操作" class="headerlink" title="文件的逐行操作"></a>文件的逐行操作</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 文件逐行遍历方法一# 一次读入，分行处理fname=input(&quot;请输入要打开文件的名称&quot;)fo=open(fname,&quot;r&quot;)for line in fo.readlines():#readline()生成一个列表，每行读取    print(line)fo.close()# 文件逐行遍历方法二# 分行读入，逐行处理fname=input(&quot;请输入要打开文件的名称&quot;)fo=open(fname,&quot;r&quot;)for line in fo: # fo 文件句柄    print(line)fo.close()</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#文件重命名import os#文件重命名  rename()方法--os.rename(&quot;需要修改的文件名&quot;,&quot;新的文件名&quot;)#文件删除  remove()方法--os.remove(&quot;要删除的文件名&quot;)</span></span><br></pre></td></tr></table></figure>
+
+
+
+<table>
+<thead>
+<tr>
+<th>访问模式</th>
+<th>说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>r</td>
+<td>只读模式，指针在文件开头（默认模式）</td>
+<td>如果不存在会报错</td>
+</tr>
+<tr>
+<td>w</td>
+<td>写入模式，有则覆盖，不存在则创建</td>
+<td></td>
+</tr>
+<tr>
+<td>a</td>
+<td>追加模式，有则追加，不存在则创建</td>
+<td></td>
+</tr>
+<tr>
+<td>rb</td>
+<td>二进制只读模式，指针在开头</td>
+<td></td>
+</tr>
+<tr>
+<td>wb</td>
+<td>二进制写入模式</td>
+<td></td>
+</tr>
+<tr>
+<td>ab</td>
+<td>二进制追加模式，指针在文件末尾</td>
+<td></td>
+</tr>
+<tr>
+<td>r+</td>
+<td>读写模式，指针在文件开头</td>
+<td></td>
+</tr>
+<tr>
+<td>w+</td>
+<td>读写模式，有则覆盖，无则创建</td>
+<td></td>
+</tr>
+<tr>
+<td>a+</td>
+<td>读写+追加模式，指针在文件末尾</td>
+<td></td>
+</tr>
+<tr>
+<td>rb+</td>
+<td>二进制读写，指针在文件夹开头</td>
+<td></td>
+</tr>
+<tr>
+<td>wb+</td>
+<td>二进制读写，覆盖或创建</td>
+<td></td>
+</tr>
+<tr>
+<td>ab+</td>
+<td>二进制读写，指针在文件末尾或创建新文件</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#捕获单个异常try:    可能发生异常的代码块except 可能发生的异常类型 :    若发生异常执行的语句    # 捕获多个异常try:    可能发生异常的代码块except (异常1，异常2):    若发生异常执行的语句#  捕获多个异常try:    可能发生异常的代码块except (异常1,异常2) as result:    若发生异常执行的语句    print(result) # 打印错误信息，错误信息以字符串形式被打印    # 捕获通常异常try:    可能发生异常的代码块except Exception as result: #Exception可以承接任何异常    若异常发生时执行的语句    print(result)    # try--finally(无论如何都执行)try:    可能发生异常的代码块except 可能发生异常的类型 :    若发生异常时执行的语句finally:    不论是否异常都执行的的代码</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#文本进度条#str.center(width排版宽度, fillchar填充字符) import timescale =50print(&quot;执行开始&quot;.center(scale//2,&quot;-&quot;))start =time.perf_counter()for i in range(scale+1):    a=&#x27;*&#x27; * i    b=&#x27;.&#x27; *(scale - i)    c=(i/scale)*100    dur = time.perf_counter()-start    print(&quot;\r&#123;:^3.0f&#125;%[&#123;&#125;-&gt;&#123;&#125;]&#123;:.2f&#125;s&quot;.format(c,a,b,dur),end=&quot;&quot;)print(&quot;\n&quot;+&quot;执行结束&quot;.center(scale//2,&#x27;-&#x27;))</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#身体指数BMI(分支结构)hight,weght=eval(input(&quot;请输入身高（米）和体重（公斤）[逗号隔开]：&quot;))bmi=weght/pow(hight,2)print(&quot;BMI数值为:&#123;.2f&#125;&quot;.format(bmi))who,nat=&quot;&quot;,&quot;&quot;if bmi &lt;18.5:    who,nat=&quot;偏瘦&quot;,&quot;偏瘦&quot;elif 18.5&lt;=bmi&lt;24:    who,nat=&quot;正常&quot;,&quot;正常&quot;elif 24&lt;=bmi&lt;25:    who,nat=&quot;正常&quot;,&quot;偏胖&quot;elif 25&lt;=bmi&lt;28:        who,nat=&quot;偏胖&quot;,&quot;偏胖&quot;elif 28&lt;=bmi&lt;30:        who,nat=&quot;偏胖&quot;,&quot;肥胖&quot;else:        who,nat=&quot;肥胖&quot;,&quot;肥胖&quot;print(&quot;BMI指标为：国际:&#x27;&#123;0&#125;&#x27;,国内&#x27;&#123;1&#125;&#x27;&quot;.format(who,nat))</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#圆周率的计算1pi=0N=100for k in range(N)	pi +=1/pow(16,k)*(\        4/(8*k+1)-2/(8*k+4)-\        1/(8*k+5)-1/(8*k+6))print(&quot;圆周率值是：&#123;&#125;&quot;.format(pi))#圆周率的计算2#蒙特卡罗方法form random import randomform time import perf_counterDARTS=1000*1000hits=0.0start=perf_counter()for i in range(1,DARTS+1):    x,y=random(),random()    dist=pow(x**2+y**2,0.5)    if dist&lt;=1.0    	hits +=1pi=4*(hits/DARTS)print(&quot;圆周率值是：&#123;&#125;&quot;.format(pi))print(&quot;运行时间是：&#123;:.5f&#125;s&quot;.format(perf_counter()-start))</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#七段数码管import turtledef drawLine(draw):    turtle.pendown() if draw else turtle.penup()    turtle.fd(40)    turtle.right(90)def drawDight(dight):    drawLine(True) if dight in [2,3,4,5,6,8,9] else drawLine(False)    drawLine(True) if dight in [0,1,3,4,5,6,7,8,9] else drawLine(False)    drawLine(True) if dight in [0,2,3,5,6,8,9] else drawLine(False)    drawLine(True) if dight in [0,2,6,8] else drawLine(False)    turtle.left(90)    drawLine(True) if dight in [0,4,5,6,8,9] else drawLine(False)    drawLine(True) if dight in [0,2,3,5,6,7,8,9] else drawLine(False)    drawLine(True) if dight in [0,1,2,3,4,7,8,9] else drawLine(False)	turtle.left(180)    turtle.penup()    turtle.fd(20)def drawDate(date):    for i in date:        drawDigit(eval(i))def main():    turtle.setup(800,350,200,200)    turtle.penup()    turtle.fd(-300)    turtle.pensize(5)    drawDate(&#x27;20210708&#x27;)    turtle.hideturtle()    turtle.donemain()</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#科赫雪花（雪花曲线）（分型曲线）import turtledef koch(size,n):    if(n==0):    	turtle.fd(size)    else:        for angle in [0,60,-120,60]:        	turtle.left(angle)            koch(size/3,n-1)def main():    turtle.setup(600,600)#pycharm这里setup的使用参考上方turtle的解释说明    turtlr.penup()    turtle.goto(-200,100)    turtle.pendown()    turtle.pensize(2)    level=3    koch(400,level)    turtle.right(120)    koch(400,level)    turtle.right(120)    koch(400,level) #三阶科赫曲线    turtle.hideturtle()main()</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 基本统计值def getNum():    nums = []    iNumStr = input(&quot;input numbers(&lt;br&gt;exit):&quot;)    while iNumStr != &quot;&quot;:    	nums.append(eval(iNumStr))        iNumStr = input(&quot;input numbers(&lt;br&gt;exit):&quot;)    return numsdef mean(numbers):    s = 0.0    for num in numbers:        s += num    return s/len(numbers)def dev(numbers,mean):    sdev = 0.0    for num in numbers:        sdev += (num - mean)**2    return pow(sdev/len(numbers)-1,0.5)def median(numbers):    sorted(numbers)    size = len(numbers)    if size % 2==0:        med = (numbers[size//2-1]+numbers[size//2+1])/2    else:        med =nembers[size//2]    return medn = getNum()m = mean(n)print(&quot;averange:&#123;&#125;,variance:&#123;:.2&#125;,median:&#123;&#125;.&quot;.format(m,dev(n,m),median(n)))        </span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 文本词频统计 </span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 政府工作报告词云import jiebaimport wordcloud#分割线(将背景变为五角星)from scipy.misc import imreadmask=imread(&quot;fivestar.png&quot;)#分割线f=open(&quot;关于实施乡村振兴战略的意见.txt&quot;,&quot;r&quot;,encoding=&quot;utf-8&quot;)t=f.read()f.close()ls=jieba.lcut(t)txt=&quot; &quot;.jion(ls)w=wordcloud.WordCloud(font_path=&quot;msyh.ttc&quot;,width=1000,height=700,background_color=&quot;white&quot;,)#生成五角星则再加上“mask=mask”w.generate(txt)w.to_file(&quot;grwordcloud.png&quot;)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 体育竞技分析#分步完成自顶向下#1.打印介绍 2.输入数据 3.比赛模拟 4.结果输出from random import randomdef printIntro():    print(&quot;这个程序模拟两个选手A和B的某种竞技比赛&quot;)    print(&quot;程序运行需要A和B的能力值（以0到1之间的小数表示）&quot;)    def getInputs():    a=eval(input(&quot;请输入选手A的能力值(0-1)：&quot;))    b=eval(input(&quot;请输入选手B的能力值(0-1)：&quot;))    n=eval(input(&quot;模拟比赛的场次：&quot;))    return a,b,ndef printSummary(winsA,winsB):    n= winsA + winsB    print(&quot;竞技分析开始，共模拟&#123;&#125;场比赛&quot;.format(n))    print(&quot;选手A获胜&#123;&#125;场比赛，占比&#123;:0.1%&#125;&quot;.format(sinsA,winsA/n))    print(&quot;选手B获胜&#123;&#125;场比赛，占比&#123;:0.1%&#125;&quot;.format(winsB,winsB/n))def gameOver(a,b):    return a==15 or b==15    def simOneGame(probA,probB):    scoreA,scoreB = 0,0    serving = &quot;A&quot;    while not gameOver(scoreA,scoreB):        if serving ==&quot;A&quot;:            if random()&lt; probA:                scoreA += 1            else:                serving = &quot;B&quot;        else:            if random()&lt; probB:                scoreB += 1            else:                serving = &quot;A&quot;        return scoreA,scoreBdef sinNGames(n,probA,probB):    winsA,winsB=0,0    for i in range(n):        scoreA,scoreB=simOneGame(probA,probB)        if scoreA &gt; scoreB:            winsA += 1        else:            winsB += 1    return winsA,winsBdef main():    printIntro()    probA,probB,n=getInputs()    winsA,winsB=simNGames(n,probA,probB)    printSummary(winsA,winsB)main()</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 第三方库自动安装脚本import oslib = &#123;&quot;numpy&quot;,&quot;matplotlib&quot;,&quot;pillow&quot;,&quot;sklearn&quot;,&quot;request&quot;,&quot;jieba&quot;,&quot;beautifulsoup4&quot;,&quot;wheel&quot;,&quot;networkx&quot;,&quot;sympy&quot;,&quot;pyinstaller&quot;,&quot;django&quot;,&quot;flask&quot;,&quot;werobot&quot;,&quot;pyqt5&quot;,&quot;pandas&quot;,&quot;pyopengl&quot;,&quot;pypdf2&quot;,&quot;docopt&quot;,&quot;pygame&quot;&#125;try:    for lib in libs:        os.system(&quot;pip install &quot;+ lib)    print(&quot;Successful&quot;)except:    print(&quot;Failed Somehow&quot;)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#霍兰德人格分析</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 玫瑰花绘制import turtle as t# 定义一个曲线绘制函数def DegreeCurve(n,r,d=1):    for i in range(n):        t.left(d)        t.circle(r,abs(d))# 初始位置设定s = 0.2 # sizet.Screen().setup(450*5*s,750*5*s)#此处为pycharm上面的用法t.pencolor(&quot;black&quot;)t.fillcolor(&quot;red&quot;)t.speed(100)t.penup()t.goto(0,900*s)t.pendown()# 绘制花朵形状t.begin_fill()t.circle(200*s,30)DegreeCurve(60,50*s)t.circle(200*s,30)DegreeCurve(4,100*s)t.circle(300*s,50)DegreeCurve(50,50*s)t.circle(350*s,65)DegreeCurve(40,70*s)t.circle(150*s,50)DegreeCurve(20,50*s,-1)t.circle(400*s,60)DegreeCurve(18,50*s)t.fd(250*s)t.right(150)t.circle(-500*s,12)t.left(140)t.circle(550*s,110)t.left(27)t.circle(650*s,100)t.left(130)t.circle(-300*s,20)t.right(123)t.circle(220*s,57)t.end_fill()# 绘制花枝形状t.left(120)t.fd(280*s)t.left(115)t.circle(300*s,33)t.left(180)t.circle(-300*s,33)DegreeCurve(70,225*s,-1)t.circle(350*s,104)t.left(90)t.circle(200*s,105)t.circle(-500*s,63)t.penup()t.goto(170*s,-30*s)t.pendown()t.left(160)DegreeCurve(20,2500*s)DegreeCurve(220,250*s,-1)# 绘制一个绿叶子t.fillcolor(&quot;green&quot;)t.penup()t.goto(670*s,-180*s)t.pendown()t.right(140)t.begin_fill()t.circle(300*s,120)t.left(60)t.circle(300*s,120)t.end_fill()t.penup()t.goto(180*s,-550*s)t.pendown()t.right(85)t.circle(600*s,400)# 绘制另一个绿叶子t.penup()t.goto(-150*s,-1000*s)t.pendown()t.begin_fill()t.rt(120)t.circle(300*s,115)t.left(75)t.circle(300*s,100)t.end_fill()t.penup()t.goto(430*s,-1070*s)t.rt(30)t.circle(-600*s,35)t.done()</span></span><br></pre></td></tr></table></figure>
+
+
+
+<table>
+<thead>
+<tr>
+<th>库名</th>
+<th>用途</th>
+<th>pip 安装指令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NumPy</td>
+<td>N维数据表示和运算</td>
+<td>pip install numpy</td>
+</tr>
+<tr>
+<td>Matplotlib</td>
+<td>二维数据可视化</td>
+<td>pip install</td>
+</tr>
+<tr>
+<td>PIL</td>
+<td>图像处理</td>
+<td>pip install</td>
+</tr>
+<tr>
+<td>Scikit-Learn</td>
+<td>机器学习和数据挖掘</td>
+<td>pip install</td>
+</tr>
+<tr>
+<td>Requests</td>
+<td>HTTP协议访问及网络爬虫</td>
+<td>pip install</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>pip install</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>pip install</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>pip install</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>pip install</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>pip install</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>pip install</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>pip install</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>pip install</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>pip install</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>pip install</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>pip install</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>pip install</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>pip install</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>pip install</td>
+</tr>
+</tbody></table>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="系统函数"><a href="#系统函数" class="headerlink" title="系统函数"></a>系统函数</h2><h3 id="print的使用"><a href="#print的使用" class="headerlink" title="print的使用"></a>print的使用</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>字符串和数值类型可以直接输出<span class="number">2.</span>变量(数值，布尔，列表，字典等都可以直接输出)<span class="number">3.</span>格式化输出s=<span class="string">&#x27;hello&#x27;</span>x=<span class="built_in">len</span>(s)<span class="built_in">print</span>(<span class="string">&quot;The length of %s is %d&quot;</span> %(s,x))<span class="comment"># %s和%d有那味了，后面的格式看着是元组类型，还是先统称序列吧</span></span><br></pre></td></tr></table></figure>
+
+
+
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>作用</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%</td>
+<td>转换说明符的开始</td>
+<td></td>
+</tr>
+<tr>
+<td>-</td>
+<td>左对齐</td>
+<td>print(‘%-f’ % pi)</td>
+</tr>
+<tr>
+<td>+</td>
+<td>转换值之前加上正负号(显示正负号)</td>
+<td></td>
+</tr>
+<tr>
+<td>“”（空白）</td>
+<td>数前方多余位置用空白填充</td>
+<td></td>
+</tr>
+<tr>
+<td>0</td>
+<td>表示位数不够用0填充</td>
+<td></td>
+</tr>
+<tr>
+<td>m.n</td>
+<td>打印m位数字，其中n位小数（逗号也算一位数字）</td>
+<td>字符串的精度呢</td>
+</tr>
+<tr>
+<td>* . *</td>
+<td>可用*代替m.n，则从元组中读出</td>
+<td>print(“pi = %*.*f” % (6,3,pi))</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>转换类型</th>
+<th>含义</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>d,i</td>
+<td>带符号十进制整数</td>
+<td></td>
+</tr>
+<tr>
+<td>o</td>
+<td>不带符号八进制</td>
+<td></td>
+</tr>
+<tr>
+<td>u</td>
+<td>不带符号十进制</td>
+<td>不带符号的话就体现出“+”的作用了</td>
+</tr>
+<tr>
+<td>x</td>
+<td>不带符号十六进制</td>
+<td></td>
+</tr>
+<tr>
+<td>e</td>
+<td>科学计数法表示的浮点数</td>
+<td></td>
+</tr>
+<tr>
+<td>f</td>
+<td>十进制浮点数</td>
+<td></td>
+</tr>
+<tr>
+<td>g</td>
+<td>如果指数大于-4或者小于精度值则和e相同，其他情况和f相同</td>
+<td></td>
+</tr>
+<tr>
+<td>C</td>
+<td>单字符（接受整数或单字符字符串）</td>
+<td></td>
+</tr>
+<tr>
+<td>r</td>
+<td>字符串（使用repr转换任意python对象)</td>
+<td></td>
+</tr>
+<tr>
+<td>s</td>
+<td>字符串（使用str转换任意python对象）</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>repr和str的区别：<br>repr()函数转换为供解释器读取的格式<br>str()函数转换为适合人阅读的格式</p>
+<h3 id="format函数在输出格式化中的使用"><a href="#format函数在输出格式化中的使用" class="headerlink" title="format函数在输出格式化中的使用"></a>format函数在输出格式化中的使用</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1.通过关键字print(&#x27;&#123;name&#125;在&#123;option&#125;&#x27;.format(name=&#x27;写某人&#x27;,option=&#x27;写代码&#x27;))# 2.通过位置print(&#x27;name=&#123;&#125; path=&#123;&#125;&#x27;.format(&#x27;张三&#x27;,&#x27;/&#x27;))print(&#x27;&#123;1&#125;在&#123;0&#125;&#x27;.format(&#x27;写代码&#x27;,&#x27;谢某人&#x27;))print(&#x27;&#123;0&#125;在&#123;1&#125;&#x27;.format(&#x27;谢某人&#x27;,&#x27;写代码&#x27;))#0 1位置不管，结果一样#填充和对齐# ^&lt;&gt;数字，居中、左对齐、右对齐、后面带宽度print(&#x27;&#123;:^30&#125;&#x27;.format(&quot;zhangsan&quot;)) # 居中print(&#x27;&#123;:&gt;30&#125;&#x27;.format(&quot;zhangsan&quot;)) # 右对齐print(&#x27;&#123;:&lt;30&#125;&#x27;.format(&quot;zhangsan&quot;)) # 左对齐30：字段长度（最左到最右之间的长度）#精度控制 (:.nf)print(&#x27;&#123;:.2f&#125;&#x27;.format(3.14159))#结果:3.14#保留两位小数，两位后四舍五入print(&#x27;&#123;:.5f&#125;&#x27;.format(3.14))# 结果:3.14000，保留5位小数，不足补0#进制转化 b o d x 分别对应 二、八、十、十六进制print(&#x27;&#123;:b&#125;&#x27;.format(20))print(&#x27;&#123;:o&#125;&#x27;.format(20))print(&#x27;&#123;:d&#125;&#x27;.format(20))print(&#x27;&#123;:x&#125;&#x27;.format(20))结果：10100242014# 千位分隔符(:,)print(&#x27;&#123;:,&#125;&#x27;.format(100000000))print(&#x27;&#123;:,&#125;&#x27;.format(123456.123456))#结果：100,000,000#123,456.123456</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#定义函数def &lt;函数名&gt;(&lt;非可选参数&gt;,&lt;可选参数&gt;):#可选参数放在必选参数后面    &lt;函数体&gt;    return &lt;返回值&gt;#例子(求阶乘)-固定数量参数def fact(n,m=1):# m为可选参数    s=1    for i in range(1,n+1):        s *= i    return s // m#例2(阶乘乘某数[组])-可变数量参数def fact(n,*b):#  &quot;*b&quot;可变参数形式    s = 1    for i in range(1,n+1):        s *= i    for item in b:        s *= item    return s#参数传递#1.按位置传递#2.按名称#返回值#1.单个返回值#2.多个返回值 return s//m,n,m# lambda函数</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#函数的递归调用#例子1（字符串反转）&gt;&gt;&gt;s[::-1]def rvs(s):    if s ==&quot;&quot;:        return s    else :        return rvs(s[1:])+s[0]#例子2（斐波那契数列）def f(n):    if n ==1 or n==2:        return 1    else :        return f(n-1)+f(n-2)#例子3（汉诺塔）count=0def hanoi(n,src,dst,mid):#(圆盘个数，起始柱子，目标柱子，途径柱子)    global count    if n==1 :        print(&quot;&#123;&#125;:&#123;&#125;-&gt;&#123;&#125;&quot;.format(1,src,dst))        count +=1    else:        hanoi(n-1,src,mid,dst)        print(&quot;&#123;&#125;:&#123;&#125;-&gt;&#123;&#125;&quot;.format(n,src,dst))        count +=1        hanoi(n-1,mid,dst,src)hanoi(3,&quot;A&quot;,&quot;C&quot;,&quot;B&quot;)print(count)</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="变量-1"><a href="#变量-1" class="headerlink" title="变量"></a>变量</h1><h2 id="局部变量和全局变量"><a href="#局部变量和全局变量" class="headerlink" title="局部变量和全局变量"></a>局部变量和全局变量</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">global</span> s <span class="comment">#在函数内部使用，声明s是全局变量#局部变量为组合数据类型且未创建，等同于全局变量#例子1ls = [&quot;F&quot;,&quot;f&quot;]#在函数外部真实创建了def func(a):    ls.append(a)#在列表ls中增加字符a    return #ls在函数外部创建，函数内部未完整创建一个ls，则内部用的ls还是外部的那个全局变量func(&quot;C&quot;)print(ls)&gt;&gt;&gt;[&#x27;F&#x27;,&#x27;f&#x27;,&#x27;C&#x27;]#例子2ls =[&quot;F&quot;,&quot;f&quot;]def func(a):    ls=[]#此时内部创建了组合数据    ls.append(a)#则这里使用的就是函数内部的局部变量    returnfunc(&quot;C&quot;)#函数内部操作与外部无关peint(ls)&gt;&gt;&gt;[&#x27;F&#x27;,&#x27;f&#x27;]</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="python库之数据分析"><a href="#python库之数据分析" class="headerlink" title="python库之数据分析"></a>python库之数据分析</h1><p>Numpy：</p>
+<p>Pandas:</p>
+<p> SciPy：数学，科学和工程计算（类似matlab）</p>
+<h2 id="数据可视化"><a href="#数据可视化" class="headerlink" title="数据可视化"></a>数据可视化</h2><p>Matplotlib：高质量的二维数据可视化功能库</p>
+<p>Seaborn：统计类数据可视化功能库</p>
+<p>Mayavi：三位科学数据可视化功能库</p>
+<h2 id="文本处理"><a href="#文本处理" class="headerlink" title="文本处理"></a>文本处理</h2><p>PyPDF2：用来处理pdf文件的工具集</p>
+<p>NLTK:自然语言文本处理第三方库</p>
+<p>Python-docx:创建或更新Microsoft Word文件的第三方库</p>
+<h2 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h2><p>Scikit-learn：机器学习方法工具集</p>
+<p>TensorFLow：阿尔法狗背后的机器学期框架</p>
+<h2 id="深度学习"><a href="#深度学习" class="headerlink" title="深度学习"></a>深度学习</h2><p>MXNet：基于神经网络深度学习计算框架</p>
+<h2 id="网络爬虫（requests）"><a href="#网络爬虫（requests）" class="headerlink" title="网络爬虫（requests）"></a>网络爬虫（requests）</h2><p>Scrapy:优秀的网络爬虫框架</p>
+<p>pyspider：强大的Web页面爬取系统</p>
+<h2 id="Web信息提取"><a href="#Web信息提取" class="headerlink" title="Web信息提取"></a>Web信息提取</h2><p>Beautiful Soup：HTML和XML的解析库</p>
+<p>Re：正则表达式解析和处理功能库</p>
+<p>Python-Goose：提取文章类型Web页面的功能库</p>
+<h2 id="Web网站开发"><a href="#Web网站开发" class="headerlink" title="Web网站开发"></a>Web网站开发</h2><p>Django:最流行的Web开发框架</p>
+<p>Pyramid：规模适中的Web框架</p>
+<p>Flask：Web应用开发微框架</p>
+<h2 id="网络应用开发"><a href="#网络应用开发" class="headerlink" title="网络应用开发"></a>网络应用开发</h2><p>WeRoBot：微信公众号开发框架</p>
+<p>aip：百度AI开放平台接口</p>
+<p>MyQR：二维码生成第三方库</p>
+<h2 id="图形用户界面"><a href="#图形用户界面" class="headerlink" title="图形用户界面"></a>图形用户界面</h2><p>PyQt5：Qt开发框架的Python接口</p>
+<p>wxPython：跨平台GUI开发框架</p>
+<p>PyGObject：使用GTK+开发GUI的功能库</p>
+<h2 id="游戏开发"><a href="#游戏开发" class="headerlink" title="游戏开发"></a>游戏开发</h2><p>PyGame：简单的游戏开发库（入门）</p>
+<p>Panda3D：开源、跨平台的3D渲染和游戏开发库</p>
+<p>cocos2d：构建2D游戏和图形界面交互式应用的框架</p>
+<h2 id="虚拟现实"><a href="#虚拟现实" class="headerlink" title="虚拟现实"></a>虚拟现实</h2><p>VR Zero：在树莓派上开发VR用硬的Python库</p>
+<p>pyovr：Oculus Rift的Python接口</p>
+<p>Vizard：基于Python的通用VR开发引擎</p>
+<h2 id="图形艺术"><a href="#图形艺术" class="headerlink" title="图形艺术"></a>图形艺术</h2><p>Quads：迭代的艺术（像素风）</p>
+<p>ascii_art:ASCII艺术风格</p>
+<p>tuetle：海归绘图体系（random-art）print</p>
+
+    
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2021/10/24/py-md/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-first-aeticle" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
